@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="ca" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Manel · Classes de repàs SMX & ASIX</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ORBS DE FONS -->
+  <div class="orbs">
+    <div class="orb o1"></div>
+    <div class="orb o2"></div>
+    <div class="orb o3"></div>
+  </div>
+
+  <!-- NAV -->
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="#hero" class="nav-logo">
+        <span class="br">[</span>manel<span class="ac">_</span>classes<span class="br">]</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#sobre-mi">Sobre mi</a></li>
+        <li><a href="#classes">Classes</a></li>
+        <li><a href="#inscripcio">Inscriu-te</a></li>
+      </ul>
+      <div class="nav-right">
+        <button class="tog" id="togBtn" aria-label="Canviar tema">
+          <span class="tog-track"><span class="tog-thumb"></span></span>
+          <span id="togIcon">☀️</span>
+        </button>
+        <a href="#inscripcio" class="btn-nav">Contactar</a>
+      </div>
+      <button class="burger" id="burger" aria-label="Menú">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="nav-mob" id="navMob">
+      <a href="#sobre-mi">Sobre mi</a>
+      <a href="#classes">Classes</a>
+      <a href="#inscripcio">Inscriu-te</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="hero">
+    <div class="hero-content">
+      <div class="eyebrow"><span class="pulse"></span>Disponible · Sabadell &amp; Online</div>
+      <h1>Repàs tècnic<br/><span class="grad">sense voltes.</span></h1>
+      <p class="hero-sub">
+        Soc en Manel, estudio <strong>ASIX</strong> amb enfoc en ciberseguretat i treballo alhora. Done classes a alumnes de <strong>SMX 1r i 2n</strong> i <strong>ASIX 1r</strong>. Explico des de prop del temari, amb els problemes reals.
+      </p>
+      <div class="hero-btns">
+        <a href="#inscripcio" class="btn-primary">Sol·licitar plaça</a>
+        <a href="#classes"    class="btn-ghost">Veure mòduls →</a>
+      </div>
+    </div>
+
+    <div class="terminal">
+      <div class="term-bar">
+        <span class="td r"></span><span class="td y"></span><span class="td g"></span>
+        <span class="t-title">manel@repas ~ bash</span>
+      </div>
+      <div class="term-body" id="termBody"></div>
+    </div>
+  </section>
+
+  <!-- SOBRE MI -->
+  <section class="sec" id="sobre-mi">
+    <div class="container">
+      <div class="sec-lbl">whoami</div>
+      <h2 class="sec-title reveal">Qui soc</h2>
+      <div class="about-grid">
+        <div class="about-text reveal">
+          <p>Estudio <strong>ASIX (Administració de Sistemes Informàtics en Xarxa)</strong> especialitzant-me en ciberseguretat. Ho compagino amb feina, i sé el que és gestionar el temps i l'estrès.</p>
+          <p>El meu avantatge com a professor: <strong>acabo de passar pel que tu estàs veient ara</strong>. Conec els exàmens, els punts on tothom s'encalla, i com explicar-ho sense donar voltes.</p>
+          <p>Done classes <strong>presencials a Sabadell</strong> i també <strong>online per videocrides</strong>. Horaris flexibles, m'adapto a tu.</p>
+        </div>
+        <div class="info-cards">
+          <div class="ic reveal"><span class="ic-i">🎓</span><div><div class="ic-t">Formació</div><div class="ic-d">ASIX · Ciberseguretat</div></div></div>
+          <div class="ic reveal"><span class="ic-i">📍</span><div><div class="ic-t">Ubicació</div><div class="ic-d">Sabadell + Online</div></div></div>
+          <div class="ic reveal"><span class="ic-i">🧑‍💻</span><div><div class="ic-t">Nivells</div><div class="ic-d">SMX 1r/2n · ASIX 1r</div></div></div>
+          <div class="ic reveal"><span class="ic-i">⚡</span><div><div class="ic-t">Especialitat</div><div class="ic-d">Xarxes, sistemes, seguretat</div></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CLASSES -->
+  <section class="sec sec-alt" id="classes">
+    <div class="container">
+      <div class="sec-lbl">ls ./moduls</div>
+      <h2 class="sec-title reveal">Què puc repassar amb tu</h2>
+      <p class="sec-sub reveal">Tots els mòduls que he cursat o estic cursant. Si tens dubtes d'alguna cosa que no apareix, pregunta'm igualment.</p>
+
+      <div class="tabs reveal">
+        <button class="tab active" data-tab="smx1">SMX 1r</button>
+        <button class="tab"        data-tab="smx2">SMX 2n</button>
+        <button class="tab"        data-tab="asix1">ASIX 1r</button>
+      </div>
+
+      <!-- SMX 1r -->
+      <div class="tab-pane active" id="tab-smx1">
+        <div class="mods-grid">
+          <div class="mod"><div class="mod-code">MP01</div><div class="mod-name">Muntatge i manteniment d'equips</div><div class="mod-tags"><span>Hardware</span><span>BIOS/UEFI</span><span>Perifèrics</span></div></div>
+          <div class="mod"><div class="mod-code">MP02</div><div class="mod-name">Sistemes operatius monolloc</div><div class="mod-tags"><span>Windows</span><span>Linux</span><span>Particions</span></div></div>
+          <div class="mod"><div class="mod-code">MP03</div><div class="mod-name">Ofimàtica i arxiu</div><div class="mod-tags"><span>Office</span><span>Calc</span><span>Writer</span></div></div>
+          <div class="mod"><div class="mod-code">MP04</div><div class="mod-name">Sistemes operatius en xarxa</div><div class="mod-tags"><span>Windows Server</span><span>Active Directory</span></div></div>
+          <div class="mod"><div class="mod-code">MP05</div><div class="mod-name">Xarxes locals</div><div class="mod-tags"><span>TCP/IP</span><span>Switch</span><span>VLAN</span></div></div>
+          <div class="mod"><div class="mod-code">MP06</div><div class="mod-name">Seguretat informàtica</div><div class="mod-tags"><span>Malware</span><span>Firewall</span><span>Antivirus</span></div></div>
+        </div>
+      </div>
+
+      <!-- SMX 2n -->
+      <div class="tab-pane" id="tab-smx2">
+        <div class="mods-grid">
+          <div class="mod"><div class="mod-code">MP07</div><div class="mod-name">Serveis de xarxa</div><div class="mod-tags"><span>DNS</span><span>DHCP</span><span>HTTP</span></div></div>
+          <div class="mod"><div class="mod-code">MP08</div><div class="mod-name">Aplicacions web</div><div class="mod-tags"><span>Apache</span><span>PHP</span><span>MySQL</span></div></div>
+          <div class="mod"><div class="mod-code">MP09</div><div class="mod-name">Administració de sistemes</div><div class="mod-tags"><span>Linux</span><span>Scripts</span><span>Bash</span></div></div>
+          <div class="mod"><div class="mod-code">MP10</div><div class="mod-name">Xarxes sense fils</div><div class="mod-tags"><span>Wi-Fi</span><span>WPA2/3</span><span>Routers</span></div></div>
+          <div class="mod"><div class="mod-code">MP11</div><div class="mod-name">Empresa i iniciativa emprenedora</div><div class="mod-tags"><span>FOL</span><span>Empresa</span></div></div>
+        </div>
+      </div>
+
+      <!-- ASIX 1r -->
+      <div class="tab-pane" id="tab-asix1">
+        <div class="mods-grid">
+          <div class="mod hl"><div class="mod-code">MP01</div><div class="mod-name">Implantació de sistemes operatius</div><div class="mod-tags"><span>Linux</span><span>Windows Server</span><span>Virtualització</span></div></div>
+          <div class="mod hl"><div class="mod-code">MP02</div><div class="mod-name">Fonaments de hardware</div><div class="mod-tags"><span>Arquitectura</span><span>Servidors</span><span>RAID</span></div></div>
+          <div class="mod hl"><div class="mod-code">MP03</div><div class="mod-name">Xarxes locals</div><div class="mod-tags"><span>Routing</span><span>VLANs</span><span>Cisco</span></div></div>
+          <div class="mod hl"><div class="mod-code">MP04</div><div class="mod-name">Llenguatge de marques</div><div class="mod-tags"><span>HTML</span><span>CSS</span><span>XML</span></div></div>
+          <div class="mod hl"><div class="mod-code">MP05</div><div class="mod-name">Fonaments de programació</div><div class="mod-tags"><span>Python</span><span>Algorítmica</span><span>POO</span></div></div>
+          <div class="mod hl"><div class="mod-code">MP06</div><div class="mod-name">Seguretat i alta disponibilitat</div><div class="mod-tags"><span>Ciberseguretat</span><span>Backups</span><span>HA</span></div></div>
+        </div>
+      </div>
+
+      <!-- Preus -->
+      <div class="precios reveal">
+        <div class="pc">
+          <div class="pc-badge">Individual</div>
+          <div class="pc-num">10<span>€/h</span></div>
+          <div class="pc-desc">Sessió d'1h, temari a mida, el teu ritme.</div>
+        </div>
+        <div class="pc feat">
+          <div class="pc-badge">Bo 5 sessions</div>
+          <div class="pc-num">45<span>€</span></div>
+          <div class="pc-desc">5 hores — estalvies 5€. Ideal per a exàmens.</div>
+        </div>
+        <div class="pc">
+          <div class="pc-badge">Grup (2-3 persones)</div>
+          <div class="pc-num">7<span>€/h·p</span></div>
+          <div class="pc-desc">Més econòmic, mateixa qualitat. Apreneu junts.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FORMULARI -->
+  <section class="sec" id="inscripcio">
+    <div class="container container-sm">
+      <div class="sec-lbl">POST /solicitud</div>
+      <h2 class="sec-title reveal">Sol·licita la teva plaça</h2>
+      <p class="sec-sub reveal">Omple el formulari i et contacto en menys de 24h per confirmar horari i començar.</p>
+
+      <form class="form-card reveal" id="contactForm" novalidate>
+        <div class="form-row">
+          <div class="fg"><label for="f-nom">Nom <span class="req">*</span></label><input type="text" id="f-nom" name="nom" placeholder="El teu nom" required /></div>
+          <div class="fg"><label for="f-cog">Cognoms <span class="req">*</span></label><input type="text" id="f-cog" name="cognom" placeholder="Els teus cognoms" required /></div>
+        </div>
+        <div class="form-row">
+          <div class="fg"><label for="f-em">Email <span class="req">*</span></label><input type="email" id="f-em" name="email" placeholder="tu@email.com" required /></div>
+          <div class="fg"><label for="f-tel">Telèfon</label><input type="tel" id="f-tel" name="telefon" placeholder="612 345 678" /></div>
+        </div>
+        <div class="form-row">
+          <div class="fg">
+            <label for="f-cicle">Cicle <span class="req">*</span></label>
+            <select id="f-cicle" name="cicle" required>
+              <option value="">Selecciona el teu cicle...</option>
+              <option value="SMX 1r any">SMX — 1r any</option>
+              <option value="SMX 2n any">SMX — 2n any</option>
+              <option value="ASIX 1r any">ASIX — 1r any</option>
+            </select>
+          </div>
+          <div class="fg">
+            <label for="f-mod">Modalitat <span class="req">*</span></label>
+            <select id="f-mod" name="modalitat" required>
+              <option value="">Selecciona...</option>
+              <option value="Presencial (Sabadell)">Presencial (Sabadell)</option>
+              <option value="Online (videocride)">Online (videocride)</option>
+            </select>
+          </div>
+        </div>
+        <div class="fg">
+          <label for="f-mods">Mòduls a repassar <span class="req">*</span></label>
+          <input type="text" id="f-mods" name="moduls" placeholder="Ex: Xarxes locals, Python, Sistemes operatius..." required />
+        </div>
+        <div class="fg">
+          <label>Dies disponibles <span class="req">*</span></label>
+          <div class="dies-grid">
+            <label class="dia-pill"><input type="checkbox" value="Dilluns"   /><span>Dl</span></label>
+            <label class="dia-pill"><input type="checkbox" value="Dimarts"   /><span>Dm</span></label>
+            <label class="dia-pill"><input type="checkbox" value="Dimecres"  /><span>Dc</span></label>
+            <label class="dia-pill"><input type="checkbox" value="Dijous"    /><span>Dj</span></label>
+            <label class="dia-pill"><input type="checkbox" value="Divendres" /><span>Dv</span></label>
+            <label class="dia-pill"><input type="checkbox" value="Dissabte"  /><span>Ds</span></label>
+            <label class="dia-pill"><input type="checkbox" value="Diumenge"  /><span>Du</span></label>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="fg"><label for="f-hi">Hora inici preferida</label><input type="time" id="f-hi" name="hora_inici" /></div>
+          <div class="fg"><label for="f-hf">Hora fi preferida</label><input type="time" id="f-hf" name="hora_fi" /></div>
+        </div>
+        <div class="fg">
+          <label for="f-notes">Alguna cosa més?</label>
+          <textarea id="f-notes" name="notes" rows="3" placeholder="Examen el 15 de gener, necessito reforç urgent en routing..."></textarea>
+        </div>
+        <button type="submit" class="btn-submit" id="submitBtn">
+          <span class="btn-text">📨 Enviar sol·licitud</span>
+          <span class="btn-spinner"></span>
+        </button>
+      </form>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container footer-inner">
+      <span class="f-logo">[manel_classes]</span>
+      <span class="f-copy">Sabadell · ASIX + Ciberseguretat · <span id="year"></span></span>
+      <a href="mailto:elramas69@gmail.com" class="f-mail">elramas69@gmail.com</a>
+    </div>
+  </footer>
+
+  <!-- TOAST -->
+  <div class="toast" id="toast">
+    <span class="t-icon"></span>
+    <span class="t-msg"></span>
+  </div>
+
+  <!-- EmailJS -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+  <script>
+  /* ══════════════════════════════════════
+     EMAILJS — substitueix amb les teves claus
+     1. emailjs.com → crea compte gratuït
+     2. Crea un "Email Service" (Gmail)
+     3. Crea un "Email Template" amb variables:
+        {{nom}}, {{cognom}}, {{email}}, {{telefon}},
+        {{cicle}}, {{modalitat}}, {{moduls}},
+        {{dies}}, {{hora_inici}}, {{hora_fi}}, {{notes}}, {{data}}
+  ════════════════════════════════════════ */
+  const EJS_KEY      = 'TU_PUBLIC_KEY';
+  const EJS_SERVICE  = 'TU_SERVICE_ID';
+  const EJS_TEMPLATE = 'TU_TEMPLATE_ID';
+
+  /* ── ANY FOOTER ── */
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  /* ── TEMA ── */
+  const html  = document.documentElement;
+  const togBtn = document.getElementById('togBtn');
+  const togIcon = document.getElementById('togIcon');
+  const saved = localStorage.getItem('theme') ||
+    (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+  applyTheme(saved);
+
+  togBtn.addEventListener('click', () =>
+    applyTheme(html.dataset.theme === 'dark' ? 'light' : 'dark'));
+
+  function applyTheme(t) {
+    html.dataset.theme = t;
+    localStorage.setItem('theme', t);
+    togIcon.textContent = t === 'dark' ? '☀️' : '🌙';
+  }
+
+  /* ── NAV SCROLL ── */
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () =>
+    nav.classList.toggle('scrolled', scrollY > 20), { passive: true });
+
+  /* ── BURGER ── */
+  const burger = document.getElementById('burger');
+  const navMob = document.getElementById('navMob');
+  burger.addEventListener('click', () => navMob.classList.toggle('open'));
+  navMob.querySelectorAll('a').forEach(a =>
+    a.addEventListener('click', () => navMob.classList.remove('open')));
+
+  /* ── TERMINAL ── */
+  const lines = [
+    { type:'p', cmd:'whoami' },
+    { type:'o', txt:'manel · ASIX · ciberseguretat', d:500 },
+    { type:'p', cmd:'ls ./disponibilitat', d:1100 },
+    { type:'k', txt:'✔  Dl–Dv  17:00–21:00', d:1300 },
+    { type:'k', txt:'✔  Dissabtes  09:00–14:00', d:1500 },
+    { type:'p', cmd:'cat ./cicles.txt', d:2200 },
+    { type:'o', txt:'→  SMX 1r any  /  SMX 2n any', d:2400 },
+    { type:'o', txt:'→  ASIX 1r any', d:2600 },
+    { type:'p', cmd:'cat ./preu.txt', d:3300 },
+    { type:'k', txt:'10€/h · bo 5h=45€ · grup 7€/h·p', d:3500 },
+    { type:'c', d:4200 },
+  ];
+  const tb = document.getElementById('termBody');
+  lines.forEach(({ type, cmd, txt, d = 0 }) => {
+    setTimeout(() => {
+      const el = document.createElement('div');
+      if (type === 'p') el.innerHTML = `<span class="t-prompt">manel@repas:~$</span> <span class="t-cmd">${cmd}</span>`;
+      else if (type === 'o') el.innerHTML = `<span class="t-out">${txt}</span>`;
+      else if (type === 'k') el.innerHTML = `<span class="t-ok">${txt}</span>`;
+      else if (type === 'c') el.innerHTML = `<span class="t-prompt">manel@repas:~$</span> <span class="t-cur"></span>`;
+      tb.appendChild(el);
+      tb.scrollTop = tb.scrollHeight;
+    }, d);
+  });
+
+  /* ── TABS ── */
+  document.querySelectorAll('.tab').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.tab').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('.tab-pane').forEach(p => p.classList.remove('active'));
+      btn.classList.add('active');
+      document.getElementById('tab-' + btn.dataset.tab).classList.add('active');
+    });
+  });
+
+  /* ── SCROLL REVEAL ── */
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach((e, i) => {
+      if (e.isIntersecting) {
+        setTimeout(() => e.target.classList.add('vis'), i * 70);
+        obs.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+  /* ── EMAILJS ── */
+  if (typeof emailjs !== 'undefined') emailjs.init({ publicKey: EJS_KEY });
+
+  /* ── FORMULARI ── */
+  document.getElementById('contactForm').addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    const dies = [...document.querySelectorAll('.dia-pill input:checked')]
+      .map(c => c.value).join(', ');
+
+    const nom   = document.getElementById('f-nom').value.trim();
+    const cognom= document.getElementById('f-cog').value.trim();
+    const email = document.getElementById('f-em').value.trim();
+    const cicle = document.getElementById('f-cicle').value;
+    const modal = document.getElementById('f-mod').value;
+    const mods  = document.getElementById('f-mods').value.trim();
+
+    if (!nom || !cognom || !email || !cicle || !modal || !mods) {
+      return showToast('⚠️ Omple tots els camps obligatoris.', false);
+    }
+    if (!dies) return showToast('⚠️ Selecciona almenys un dia disponible.', false);
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email))
+      return showToast('⚠️ L\'email no és vàlid.', false);
+
+    const params = {
+      to_email:   'elramas69@gmail.com',
+      nom, cognom, email,
+      telefon:    document.getElementById('f-tel').value.trim() || '—',
+      cicle, modalitat: modal, moduls: mods, dies,
+      hora_inici: document.getElementById('f-hi').value || '—',
+      hora_fi:    document.getElementById('f-hf').value || '—',
+      notes:      document.getElementById('f-notes').value.trim() || '—',
+      data: new Date().toLocaleDateString('ca-ES', { day:'2-digit', month:'2-digit', year:'numeric' }),
+    };
+
+    const btn = document.getElementById('submitBtn');
+    btn.disabled = true;
+    btn.classList.add('loading');
+
+    try {
+      if (EJS_KEY === 'TU_PUBLIC_KEY') throw new Error('no_config');
+      await emailjs.send(EJS_SERVICE, EJS_TEMPLATE, params);
+      showToast('✅ Sol·licitud enviada! Et contactaré aviat.', true);
+      e.target.reset();
+      document.querySelectorAll('.dia-pill input').forEach(c => c.checked = false);
+    } catch (err) {
+      if (err.message === 'no_config') {
+        showToast('⚙️ Configura EmailJS al fitxer HTML per activar l\'enviament.', false);
+      } else {
+        showToast('❌ Error en l\'enviament. Intenta-ho de nou.', false);
+      }
+    } finally {
+      btn.disabled = false;
+      btn.classList.remove('loading');
+    }
+  });
+
+  /* ── TOAST ── */
+  function showToast(msg, ok = true) {
+    const t = document.getElementById('toast');
+    t.querySelector('.t-icon').textContent = ok ? '✅' : '⚠️';
+    t.querySelector('.t-msg').textContent  = msg;
+    t.classList.add('show');
+    setTimeout(() => t.classList.remove('show'), 4500);
+  }
+  </script>
+</body>
+</html>
