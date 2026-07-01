@@ -242,23 +242,7 @@
     <span class="t-msg"></span>
   </div>
 
-  <!-- EmailJS -->
-  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-
   <script>
-  /* ══════════════════════════════════════
-     EMAILJS — substitueix amb les teves claus
-     1. emailjs.com → crea compte gratuït
-     2. Crea un "Email Service" (Gmail)
-     3. Crea un "Email Template" amb variables:
-        {{nom}}, {{cognom}}, {{email}}, {{telefon}},
-        {{cicle}}, {{modalitat}}, {{moduls}},
-        {{dies}}, {{hora_inici}}, {{hora_fi}}, {{notes}}, {{data}}
-  ════════════════════════════════════════ */
-  const EJS_KEY      = 'TU_PUBLIC_KEY';
-  const EJS_SERVICE  = 'TU_SERVICE_ID';
-  const EJS_TEMPLATE = 'TU_TEMPLATE_ID';
-
   /* ── ANY FOOTER ── */
   document.getElementById('year').textContent = new Date().getFullYear();
 
@@ -339,57 +323,62 @@
   }, { threshold: 0.1 });
   document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
 
-  /* ── EMAILJS ── */
-  if (typeof emailjs !== 'undefined') emailjs.init({ publicKey: EJS_KEY });
-
-  /* ── FORMULARI ── */
+  /* ── WEB3FORMS ── */
   document.getElementById('contactForm').addEventListener('submit', async (e) => {
     e.preventDefault();
 
     const dies = [...document.querySelectorAll('.dia-pill input:checked')]
       .map(c => c.value).join(', ');
 
-    const nom   = document.getElementById('f-nom').value.trim();
-    const cognom= document.getElementById('f-cog').value.trim();
-    const email = document.getElementById('f-em').value.trim();
-    const cicle = document.getElementById('f-cicle').value;
-    const modal = document.getElementById('f-mod').value;
-    const mods  = document.getElementById('f-mods').value.trim();
+    const nom    = document.getElementById('f-nom').value.trim();
+    const cognom = document.getElementById('f-cog').value.trim();
+    const email  = document.getElementById('f-em').value.trim();
+    const cicle  = document.getElementById('f-cicle').value;
+    const modal  = document.getElementById('f-mod').value;
+    const mods   = document.getElementById('f-mods').value.trim();
 
-    if (!nom || !cognom || !email || !cicle || !modal || !mods) {
+    if (!nom || !cognom || !email || !cicle || !modal || !mods)
       return showToast('⚠️ Omple tots els camps obligatoris.', false);
-    }
-    if (!dies) return showToast('⚠️ Selecciona almenys un dia disponible.', false);
+    if (!dies)
+      return showToast('⚠️ Selecciona almenys un dia disponible.', false);
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email))
       return showToast('⚠️ L\'email no és vàlid.', false);
-
-    const params = {
-      to_email:   'elramas69@gmail.com',
-      nom, cognom, email,
-      telefon:    document.getElementById('f-tel').value.trim() || '—',
-      cicle, modalitat: modal, moduls: mods, dies,
-      hora_inici: document.getElementById('f-hi').value || '—',
-      hora_fi:    document.getElementById('f-hf').value || '—',
-      notes:      document.getElementById('f-notes').value.trim() || '—',
-      data: new Date().toLocaleDateString('ca-ES', { day:'2-digit', month:'2-digit', year:'numeric' }),
-    };
 
     const btn = document.getElementById('submitBtn');
     btn.disabled = true;
     btn.classList.add('loading');
 
     try {
-      if (EJS_KEY === 'TU_PUBLIC_KEY') throw new Error('no_config');
-      await emailjs.send(EJS_SERVICE, EJS_TEMPLATE, params);
-      showToast('✅ Sol·licitud enviada! Et contactaré aviat.', true);
-      e.target.reset();
-      document.querySelectorAll('.dia-pill input').forEach(c => c.checked = false);
-    } catch (err) {
-      if (err.message === 'no_config') {
-        showToast('⚙️ Configura EmailJS al fitxer HTML per activar l\'enviament.', false);
+      const res = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          access_key:  'c627f61b-6384-4262-9c21-64943365a828',
+          subject:     `Nova sol·licitud de ${nom} ${cognom}`,
+          from_name:   'Web Manel Classes',
+          nom, cognom, email,
+          telefon:     document.getElementById('f-tel').value.trim() || '—',
+          cicle,
+          modalitat:   modal,
+          moduls:      mods,
+          dies,
+          hora_inici:  document.getElementById('f-hi').value || '—',
+          hora_fi:     document.getElementById('f-hf').value || '—',
+          notes:       document.getElementById('f-notes').value.trim() || '—',
+          data: new Date().toLocaleDateString('ca-ES', { day:'2-digit', month:'2-digit', year:'numeric' }),
+        }),
+      });
+
+      const data = await res.json();
+      if (data.success) {
+        showToast('✅ Sol·licitud enviada! Et contactaré aviat.', true);
+        e.target.reset();
+        document.querySelectorAll('.dia-pill input').forEach(c => c.checked = false);
       } else {
-        showToast('❌ Error en l\'enviament. Intenta-ho de nou.', false);
+        throw new Error('error');
       }
+    } catch {
+      showToast('❌ Error en l\'enviament. Intenta-ho de nou.', false);
     } finally {
       btn.disabled = false;
       btn.classList.remove('loading');
